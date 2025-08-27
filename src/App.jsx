@@ -343,10 +343,10 @@ const Team = () => {
   const teamMembers = [
     {
       name: "Vebjørn",
-      bio: "Passionert om UX-design og brukersentrert utvikling. Har erfaring med React og moderne webutvikling. Leder designprosessen og brukerundersøkelser.",
-      image: "https://via.placeholder.com/200x200/3b82f6/ffffff?text=V",
-      linkedin: "#",
-      github: "#"
+      bio: "Nysgjerrig",
+      image: "/images/VebjornBilde.jpg",
+      linkedin: "https://www.linkedin.com/in/vebjørn-kjus-16b309258/",
+      github: "https://github.com/vebjornkjus"
     },
     {
       name: "Kristian", 
