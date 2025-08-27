@@ -236,28 +236,21 @@ const Status = () => {
   const statusPosts = [
     {
       id: 1,
-      title: "Prosjektoppstart og kravspesifikasjon",
-      date: "2025-01-15",
-      excerpt: "Møte med stakeholders og definering av prosjektets omfang og mål.",
+      title: "Prosjektoppstartsmøte",
+      date: "2025-08-18",
+      excerpt: "Møte med bedriften og definering av prosjektets omfang og mål.",
       tags: ["planlegging", "møter"],
-      content: "I dag hadde vi vårt første store møte med alle stakeholders fra både UiA og Capgemini. Vi gikk grundig gjennom prosjektets mål og definerte tydelige krav for appen vår. Hovedfokuset er å skape en brukervenlig løsning som motiverer ansatte til å velge trappen fremfor heisen. Vi identifiserte viktige KPIer som vi vil måle suksess på, inkludert brukertilfredshet og faktisk endring i atferd."
+      content: "I dag hadde vi vårt første møte med Capgemini. Vi gikk gjennom prosjektets mål og definerte tydelige krav for appen vi skal vidreutvikle. Hovedfokuset er å skape en brukervennlig løsning som motiverer ansatte til å være mer fysisk aktive."
     },
     {
       id: 2,
-      title: "UX Research og brukerintervjuer",
-      date: "2025-01-22",
-      excerpt: "Gjennomført intervjuer med potensielle brukere for å forstå deres behov og motivasjon.",
-      tags: ["UX", "research"],
-      content: "Vi har gjennomført 12 dybdeintervjuer med Capgemini-ansatte for å forstå deres daglige rutiner og motivasjon rundt fysisk aktivitet på jobben. Funnene viser at de fleste er positive til konseptet, men ønsker enkle og ikke-påtrengende løsninger. Hovedbarrierene er tidsmangel og bekvemmelighet. Dette vil påvirke vår designstrategi betydelig."
+      title: "Introduksjonsdag",
+      date: "2025-08-27",
+      excerpt: "Fått tilganger og opplæring i Azure devops.",
+      tags: ["planlegging", "møter"],
+      content: "I dag fikk vi adgangskort, og tilganger til bedriftens systemer. Vi har også fått opplæring i Azure DevOps, som vi skal bruke til prosjektet."
     },
-    {
-      id: 3,
-      title: "Prototype og designsystem",
-      date: "2025-02-01",
-      excerpt: "Første prototype klar for testing, med fokus på enkel navigasjon og motiverende elementer.",
-      tags: ["design", "prototype"],
-      content: "Vi har fullført vår første interaktive prototype i Figma, komplett med et konsistent designsystem. Prototypen inkluderer hovedfunksjonaliteten: daglige utfordringer, fremgangssporing, og sosiale elementer for teamkonkurranse. Designet følger Capgeminis brand guidelines men med vår egen moderne twist. Neste steg er brukertesting med 8-10 testpersoner."
-    }
+   
   ]
 
   const tags = ['alle', 'planlegging', 'UX', 'design', 'møter', 'research', 'prototype', 'analyse']
