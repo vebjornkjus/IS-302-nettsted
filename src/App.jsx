@@ -343,7 +343,7 @@ const Team = () => {
   const teamMembers = [
     {
       name: "Vebjørn",
-      bio: "Nysgjerrig",
+      bio: "IT-student med interesse for maskinlæring og maskinsyn. Erfaring innen universal utforming, databaser og prosjektledelse.",
       image: "/images/VebjornBilde.jpg",
       linkedin: "https://www.linkedin.com/in/vebjørn-kjus-16b309258/",
       github: "https://github.com/vebjornkjus"
