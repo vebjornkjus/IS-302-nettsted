@@ -349,11 +349,11 @@ const Team = () => {
       github: "https://github.com/vebjornkjus"
     },
     {
-      name: "Kristian", 
-      bio: "Fokuserer på teknisk utvikling og dataanalyse. Ekspert på backend-systemer og API-integrasjon. Ansvarlig for teknisk arkitektur og implementering.",
+      name: "Kristian Kalleberg", 
+      bio: "Erfaring innenfor IT- og informasjonssystemer. Har interesse for systemutvikling og digitalisering.",
       image: "https://via.placeholder.com/200x200/a855f7/ffffff?text=K",
-      linkedin: "#",
-      github: "#"
+      linkedin: "https://www.linkedin.com/feed/",
+      github: "https://github.com/Kristiank02"
     }
   ]
 
