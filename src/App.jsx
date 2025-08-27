@@ -11,7 +11,7 @@ const Header = () => {
     { name: 'Hva vi gjør', href: '/hva-vi-gjor' },
     { name: 'Status', href: '/status' },
     { name: 'Team', href: '/team' },
-    { name: 'Kontakt', href: '/kontakt' }
+
   ]
 
   return (
@@ -84,7 +84,8 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h3 className="text-lg font-semibold mb-4">Kontakt</h3>
-          <p className="text-gray-300">praksis2025@student.uia.no</p>
+          <p className="text-gray-300">Kristian.kalleberg@hotmail.no</p>
+          <p className="text-gray-300">Vebjorn.kjus.gmail.com</p>
         </div>
         <div>
           <h3 className="text-lg font-semibold mb-4">Partnere</h3>
@@ -236,28 +237,21 @@ const Status = () => {
   const statusPosts = [
     {
       id: 1,
-      title: "Prosjektoppstart og kravspesifikasjon",
-      date: "2025-01-15",
-      excerpt: "Møte med stakeholders og definering av prosjektets omfang og mål.",
+      title: "Prosjektoppstartsmøte",
+      date: "2025-08-18",
+      excerpt: "Møte med bedriften og definering av prosjektets omfang og mål.",
       tags: ["planlegging", "møter"],
-      content: "I dag hadde vi vårt første store møte med alle stakeholders fra både UiA og Capgemini. Vi gikk grundig gjennom prosjektets mål og definerte tydelige krav for appen vår. Hovedfokuset er å skape en brukervenlig løsning som motiverer ansatte til å velge trappen fremfor heisen. Vi identifiserte viktige KPIer som vi vil måle suksess på, inkludert brukertilfredshet og faktisk endring i atferd."
+      content: "I dag hadde vi vårt første møte med Capgemini. Vi gikk gjennom prosjektets mål og definerte tydelige krav for appen vi skal vidreutvikle. Hovedfokuset er å skape en brukervennlig løsning som motiverer ansatte til å være mer fysisk aktive."
     },
     {
       id: 2,
-      title: "UX Research og brukerintervjuer",
-      date: "2025-01-22",
-      excerpt: "Gjennomført intervjuer med potensielle brukere for å forstå deres behov og motivasjon.",
-      tags: ["UX", "research"],
-      content: "Vi har gjennomført 12 dybdeintervjuer med Capgemini-ansatte for å forstå deres daglige rutiner og motivasjon rundt fysisk aktivitet på jobben. Funnene viser at de fleste er positive til konseptet, men ønsker enkle og ikke-påtrengende løsninger. Hovedbarrierene er tidsmangel og bekvemmelighet. Dette vil påvirke vår designstrategi betydelig."
+      title: "Introduksjonsdag",
+      date: "2025-08-27",
+      excerpt: "Fått tilganger og opplæring i Azure devops.",
+      tags: ["planlegging", "møter"],
+      content: "I dag fikk vi adgangskort, og tilganger til bedriftens systemer. Vi har også fått opplæring i Azure DevOps, som vi skal bruke til prosjektet."
     },
-    {
-      id: 3,
-      title: "Prototype og designsystem",
-      date: "2025-02-01",
-      excerpt: "Første prototype klar for testing, med fokus på enkel navigasjon og motiverende elementer.",
-      tags: ["design", "prototype"],
-      content: "Vi har fullført vår første interaktive prototype i Figma, komplett med et konsistent designsystem. Prototypen inkluderer hovedfunksjonaliteten: daglige utfordringer, fremgangssporing, og sosiale elementer for teamkonkurranse. Designet følger Capgeminis brand guidelines men med vår egen moderne twist. Neste steg er brukertesting med 8-10 testpersoner."
-    }
+   
   ]
 
   const tags = ['alle', 'planlegging', 'UX', 'design', 'møter', 'research', 'prototype', 'analyse']
@@ -400,107 +394,3 @@ const TeamMember = ({ member }) => (
     </div>
   </div>
 )
-
-// Contact Page
-const Kontakt = () => (
-  <div className="py-16">
-    <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold text-center mb-12 bg-gradient-neon-bright bg-clip-text text-transparent">
-        Kontakt oss
-      </h1>
-      
-      <div className="bg-dark-900 rounded-lg shadow-xl p-8 border border-dark-800">
-        <ContactForm />
-      </div>
-    </div>
-  </div>
-)
-
-// Contact Form Component
-const ContactForm = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const formData = new FormData(e.target)
-    const name = formData.get('name')
-    const email = formData.get('email')
-    const message = formData.get('message')
-    
-    const subject = `Henvendelse fra ${name} via nettside`
-    const body = `Navn: ${name}\nE-post: ${email}\n\nMelding:\n${message}`
-    
-    window.location.href = `mailto:praksis2025@student.uia.no?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-          Navn
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          className="w-full px-3 py-2 border border-dark-700 bg-dark-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-neon-500 focus:border-transparent hover:border-neon-500/50 transition-colors duration-200"
-        />
-      </div>
-      
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-          E-post
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          className="w-full px-3 py-2 border border-dark-700 bg-dark-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-neon-500 focus:border-transparent hover:border-neon-500/50 transition-colors duration-200"
-        />
-      </div>
-      
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-          Melding
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          required
-          className="w-full px-3 py-2 border border-dark-700 bg-dark-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-neon-500 focus:border-transparent hover:border-neon-500/50 transition-colors duration-200"
-        ></textarea>
-      </div>
-      
-      <button
-        type="submit"
-        className="w-full bg-gradient-neon-bright text-black py-2 px-4 rounded-md font-semibold hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-      >
-        Send melding
-      </button>
-    </form>
-  )
-}
-
-// Main App Component
-function App() {
-  return (
-    <Router>
-      <div className="min-h-screen bg-dark-950 flex flex-col">
-        <Header />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/hva-vi-gjor" element={<HvaViGjor />} />
-            <Route path="/status" element={<Status />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/kontakt" element={<Kontakt />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
-  )
-}
-
-export default App
