@@ -394,3 +394,25 @@ const TeamMember = ({ member }) => (
     </div>
   </div>
 )
+
+// Main App Component
+function App() {
+  return (
+    <Router>
+      <div className="min-h-screen bg-dark-950 flex flex-col">
+        <Header />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/hva-vi-gjor" element={<HvaViGjor />} />
+            <Route path="/status" element={<Status />} />
+            <Route path="/team" element={<Team />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
+  )
+}
+
+export default App
