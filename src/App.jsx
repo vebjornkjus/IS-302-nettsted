@@ -11,7 +11,7 @@ const Header = () => {
     { name: 'Hva vi gjør', href: '/hva-vi-gjor' },
     { name: 'Status', href: '/status' },
     { name: 'Team', href: '/team' },
-    { name: 'Kontakt', href: '/kontakt' }
+
   ]
 
   return (
@@ -84,7 +84,8 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h3 className="text-lg font-semibold mb-4">Kontakt</h3>
-          <p className="text-gray-300">praksis2025@student.uia.no</p>
+          <p className="text-gray-300">Kristian.kalleberg@hotmail.no</p>
+          <p className="text-gray-300">Vebjorn.kjus.gmail.com</p>
         </div>
         <div>
           <h3 className="text-lg font-semibold mb-4">Partnere</h3>
@@ -394,87 +395,6 @@ const TeamMember = ({ member }) => (
   </div>
 )
 
-// Contact Page
-const Kontakt = () => (
-  <div className="py-16">
-    <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold text-center mb-12 bg-gradient-primary bg-clip-text text-transparent">
-        Kontakt oss
-      </h1>
-      
-      <div className="bg-white rounded-lg shadow-lg p-8">
-        <ContactForm />
-      </div>
-    </div>
-  </div>
-)
-
-// Contact Form Component
-const ContactForm = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const formData = new FormData(e.target)
-    const name = formData.get('name')
-    const email = formData.get('email')
-    const message = formData.get('message')
-    
-    const subject = `Henvendelse fra ${name} via nettside`
-    const body = `Navn: ${name}\nE-post: ${email}\n\nMelding:\n${message}`
-    
-    window.location.href = `mailto:praksis2025@student.uia.no?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-          Navn
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-        />
-      </div>
-      
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-          E-post
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-        />
-      </div>
-      
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-          Melding
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-        ></textarea>
-      </div>
-      
-      <button
-        type="submit"
-        className="w-full bg-gradient-primary text-white py-2 px-4 rounded-md font-medium hover:opacity-90 transition-opacity"
-      >
-        Send melding
-      </button>
-    </form>
-  )
-}
-
 // Main App Component
 function App() {
   return (
@@ -487,7 +407,6 @@ function App() {
             <Route path="/hva-vi-gjor" element={<HvaViGjor />} />
             <Route path="/status" element={<Status />} />
             <Route path="/team" element={<Team />} />
-            <Route path="/kontakt" element={<Kontakt />} />
           </Routes>
         </main>
         <Footer />
