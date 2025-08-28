@@ -175,15 +175,13 @@ const HvaViGjor = () => (
       <div className="prose prose-lg max-w-none">
         <div className="bg-white rounded-lg shadow-xl p-8 mb-8 border border-light-300">
           <p className="text-lg text-light-800 leading-relaxed mb-6">
-            Som del av vårt praksisprosjekt hos Capgemini utvikler vi en innovativ mobilapplikasjon 
-            som har som mål å oppfordre ansatte til å velge trappen fremfor heisen i hverdagen. 
-            Prosjektet kombinerer moderne teknologi med atferdspsykologi for å skape positive 
-            helsegevinster på arbeidsplassen. Vi fokuserer på brukersentrert design og 
-            evidensbaserte nudging-teknikker for å motivere til sunnere valg. Gjennom grundige 
-            UX-eksperimenter kartlegger vi brukerens behov og preferanser, mens vi samtidig 
-            implementerer smarte påminnelsessystemer og belønningsmekanismer. Vårt arbeid 
-            inkluderer også omfattende dataanalyse og kontinuerlig rapportering av fremdrift 
-            til alle interessenter.
+            Vi videreutvikler en intern applikasjon som motiverer ansatte til å 
+            velge trappene fremfor heisen. Løsningen er bygget i C# med MVC-arkitektur. 
+            I praksisperioden fokuserer vi på å rydde i mappestruktur og forbedre 
+            kodekvalitet, samt å legge til gamification‑elementer 
+            (poeng, badges og vennlige konkurranser) som øker engasjementet. 
+            Vi skal også gjøre registreringen av trappeturer så enkel som mulig, og 
+            utforsker forskjellige løsninger på dette.
           </p>
         </div>
 
@@ -196,10 +194,10 @@ const HvaViGjor = () => (
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
-              <span className="text-light-800"><strong className="text-capgemini-400">UX-eksperimenter:</strong> Brukersentert design og testing</span>
+              <span className="text-light-800"><strong className="text-capgemini-400">Refaktorering:</strong> God kodepraksis for enklere vedlikehold</span>
             </div>
             <div className="flex items-start space-x-3">
-              <div className="bg-gradient-accent w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
+              <div className="bg-gradient-capgemini-bright w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
                 <svg className="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
@@ -212,15 +210,15 @@ const HvaViGjor = () => (
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
-              <span className="text-light-800"><strong className="text-capgemini-400">Enkle analyser:</strong> Datasporing og innsikt</span>
+              <span className="text-light-800"><strong className="text-capgemini-400">Gamifikasjon:</strong> Spillaktige elementer</span>
             </div>
             <div className="flex items-start space-x-3">
-              <div className="bg-gradient-tech w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
+              <div className="bg-gradient-capgemini-bright w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
                 <svg className="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
-              <span className="text-light-800"><strong className="text-capgemini-400">Statusrapportering:</strong> Kontinuerlig kommunikasjon</span>
+              <span className="text-light-800"><strong className="text-capgemini-400">Tilgjengelighet:</strong>Enkel registrering</span>
             </div>
           </div>
         </div>
