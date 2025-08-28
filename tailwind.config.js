@@ -45,8 +45,8 @@ module.exports = {
       backgroundImage: {
         'gradient-capgemini': 'linear-gradient(135deg, #0070f3 0%, #60a5fa 100%)',
         'gradient-capgemini-bright': 'linear-gradient(135deg, #0070f3 0%, #60a5fa 70%, #60a5fa 100%)',
-        'gradient-accent': 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
-        'gradient-bright-yellow': 'linear-gradient(135deg, #fde047 0%, #facc15 50%, #eab308 100%)',
+        'gradient-accent': 'linear-gradient(135deg, #f59e0b 0%, #ff9925ff 100%)',
+        'gradient-bright-yellow': 'linear-gradient(135deg, #fde047 0%, #ffcc00ff 50%, #eab308 100%)',
         'gradient-tech': 'linear-gradient(135deg, #10b981 0%, #4ade80 100%)',
         'gradient-light': 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
         'gradient-card-hover': 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)',
