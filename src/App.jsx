@@ -432,11 +432,36 @@ const TeamMember = ({ member }) => (
     </div>
   </div>
 )
+// Title Jokester (custom blur/focus message)
+const TitleJokester = () => {
+  React.useEffect(() => {
+    const original = document.title   // husk hva tittelen var
 
+    const onBlur = () => { 
+      document.title = "Tok du trappen i dag?!?" 
+    }
+
+    const onFocus = () => { 
+      document.title = original 
+    }
+
+    window.addEventListener('blur', onBlur)
+    window.addEventListener('focus', onFocus)
+
+    return () => {
+      window.removeEventListener('blur', onBlur)
+      window.removeEventListener('focus', onFocus)
+      document.title = original
+    }
+  }, [])
+
+  return null // viser ingenting på skjermen
+}
 // Main App Component
 function App() {
   return (
     <Router>
+    <TitleJokester />
       <div className="min-h-screen bg-light-50 flex flex-col">
         <Header />
         <main className="flex-grow">
