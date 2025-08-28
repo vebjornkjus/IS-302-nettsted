@@ -278,14 +278,23 @@ const Status = () => {
       tags: ["planlegging", "møter"],
       content: "I dag fikk vi adgangskort, og tilganger til bedriftens systemer. Vi har også fått opplæring i Azure DevOps, som vi skal bruke til prosjektet."
     },
+    {
+      id: 3,
+      title: "Arbeid med nettside og applikasjon",
+      date: "2025-08-28",
+      excerpt: "Finpusset nettside, og gått gjennom applikasjonen.",
+      tags: ["research", "analyse"],
+      content: "I dag finpusset vi på nettsiden og la til det om manglet. Vi gikk også gjennom koden vi skal jobbe med i prosjektet, for å bli bedre kjent med den."
+    },
    
   ]
 
   const tags = ['alle', 'planlegging', 'UX', 'design', 'møter', 'research', 'prototype', 'analyse']
 
-  const filteredPosts = selectedTag === 'alle' 
-    ? statusPosts 
+   const filteredPosts = (selectedTag === 'alle'
+    ? statusPosts
     : statusPosts.filter(post => post.tags.includes(selectedTag))
+  ).sort((a, b) => new Date(b.date) - new Date(a.date))
 
   return (
     <div className="py-16">
