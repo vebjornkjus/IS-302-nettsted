@@ -259,6 +259,7 @@ const HvaViGjor = () => (
 // Status Page
 const Status = () => {
   const [selectedTag, setSelectedTag] = useState('alle')
+  const [expandedCards, setExpandedCards] = useState(new Set())
   
   const statusPosts = [
     {
@@ -313,9 +314,22 @@ const Status = () => {
         </div>
 
         {/* Status Posts */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
           {filteredPosts.map(post => (
-            <StatusCard key={post.id} post={post} />
+            <StatusCard 
+              key={post.id} 
+              post={post} 
+              isExpanded={expandedCards.has(post.id)}
+              onToggle={() => {
+                const newExpandedCards = new Set(expandedCards)
+                if (expandedCards.has(post.id)) {
+                  newExpandedCards.delete(post.id)
+                } else {
+                  newExpandedCards.add(post.id)
+                }
+                setExpandedCards(newExpandedCards)
+              }}
+            />
           ))}
         </div>
       </div>
@@ -324,11 +338,9 @@ const Status = () => {
 }
 
 // Status Card Component
-const StatusCard = ({ post }) => {
-  const [isExpanded, setIsExpanded] = useState(false)
-  
+const StatusCard = ({ post, isExpanded, onToggle }) => {
   return (
-    <div className="bg-white rounded-lg shadow-xl overflow-hidden border border-light-300">
+    <div className="bg-white rounded-lg shadow-xl overflow-hidden border border-light-300 self-start">
       <div className="p-6">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm text-light-800">{post.date}</span>
@@ -343,7 +355,7 @@ const StatusCard = ({ post }) => {
         <h3 className="text-lg font-semibold mb-3 text-light-900">{post.title}</h3>
         <p className="text-light-800 mb-4">{post.excerpt}</p>
         <button 
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={onToggle}
           className="text-capgemini-400 hover:text-capgemini-300 font-medium text-sm"
         >
           {isExpanded ? 'Vis mindre' : 'Les mer'}
