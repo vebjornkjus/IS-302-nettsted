@@ -81,25 +81,41 @@ const Header = () => {
 const Footer = () => (
   <footer className="bg-white text-light-900 border-t border-light-300">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+        
+        {/* Venstre kolonne */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Kontakt</h3>
-          <p className="text-light-800">Kristian.kalleberg@hotmail.no</p>
-          <p className="text-light-800">Vebjorn.kjus.gmail.com</p>
-        </div>
-        <div>
-          <h3 className="text-lg font-semibold mb-4">Partnere</h3>
+          <h3 className="text-lg font-semibold mb-6">Kontakt</h3>
           <div className="space-y-2">
-            <a href="https://www.uia.no" className="text-light-800 hover:text-light-900 block transition-colors">
-              Universitetet i Agder
+            <p className="text-light-800">Kristian.kalleberg@hotmail.no</p>
+            <p className="text-light-800">Vebjorn.kjus@gmail.com</p>
+          </div>
+        </div>
+
+        {/* Høyre kolonne */}
+        <div>
+          <h3 className="text-lg font-semibold mb-6">Partnere</h3>
+          <div className="flex justify-center space-x-12">
+            <a href="https://www.capgemini.com" target="_blank" rel="noopener noreferrer">
+              <img
+                src="/images/logo1.png"
+                alt="Universitetet i Agder"
+                className="h-24 w-auto object-contain"
+              />
             </a>
-            <a href="https://www.capgemini.com" className="text-light-800 hover:text-light-900 block transition-colors">
-              Capgemini
+            <a href="https://www.uia.no" target="_blank" rel="noopener noreferrer">
+              <img
+                src="/images/logo2.png"
+                alt="Capgemini"
+                className="h-24 w-auto object-contain"
+              />
             </a>
           </div>
         </div>
+
       </div>
-      <div className="mt-8 pt-8 border-t border-gray-800 text-center text-light-800">
+
+      <div className="mt-12 pt-8 border-t border-gray-800 text-center text-light-800">
         <p>Praksis 2025 – Vebjørn & Kristian</p>
       </div>
     </div>
@@ -110,12 +126,25 @@ const Footer = () => (
 const Home = () => (
   <div>
     {/* Hero Section */}
-    <section className="bg-gradient-light text-light-900 py-20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+    <section className="relative min-h-[60vh] py-20 overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/home-bg.jpg"
+          alt=""
+          className="w-full h-full object-cover"
+          loading="eager"
+        />
+        {/* Light overlay for readability; tweak opacity if needed */}
+        <div className="absolute inset-0 bg-white/70 md:bg-white/60"></div>
+      </div>
+
+      {/* Foreground content */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-capgemini-bright bg-clip-text text-transparent">
           Praksis 2025 – Vebjørn & Kristian
         </h1>
-        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90 text-light-900">
           Vi utvikler en web-app som oppfordrer Capgemini-ansatte til å blant annet ta trappa i stedet for heisen. Målet er å få de ansatte til å være mer fysisk aktive i hverdagen.
         </p>
         <Link
@@ -217,7 +246,7 @@ const HvaViGjor = () => (
             <div className="flex items-start space-x-3">
               <div className="bg-gradient-tech w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
                 <svg className="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
               <span className="text-light-800"><strong className="text-capgemini-400">Statusrapportering:</strong> Kontinuerlig kommunikasjon</span>
