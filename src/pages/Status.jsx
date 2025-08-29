@@ -9,7 +9,7 @@ const Status = () => {
     {
       id: 1,
       title: "Prosjektoppstartsmøte",
-      date: "2025-08-18",
+      date: "18-08-2025",
       excerpt: "Møte med bedriften og definering av prosjektets omfang og mål.",
       tags: ["planlegging", "møter"],
       content: "I dag hadde vi vårt første møte med Capgemini. Vi gikk gjennom prosjektets mål og definerte tydelige krav for appen vi skal vidreutvikle. Hovedfokuset er å skape en brukervennlig løsning som motiverer ansatte til å være mer fysisk aktive."
@@ -17,7 +17,7 @@ const Status = () => {
     {
       id: 2,
       title: "Introduksjonsdag",
-      date: "2025-08-27",
+      date: "27-08-2025",
       excerpt: "Fått tilganger og opplæring i Azure devops.",
       tags: ["planlegging", "møter"],
       content: "I dag fikk vi adgangskort, og tilganger til bedriftens systemer. Vi har også fått opplæring i Azure DevOps, som vi skal bruke til prosjektet."
@@ -25,10 +25,18 @@ const Status = () => {
     {
       id: 3,
       title: "Arbeid med nettside og applikasjon",
-      date: "2025-08-28",
-      excerpt: "Finpusset nettside, og gått gjennom applikasjonen.",
+      date: "28-08-2025",
+      excerpt: "Jobbet med nettside, og gått gjennom CapTrapp applikasjonen.",
       tags: ["research", "analyse"],
-      content: "I dag finpusset vi på nettsiden og la til det om manglet. Vi gikk også gjennom koden vi skal jobbe med i prosjektet, for å bli bedre kjent med den."
+      content: "I dag jobbet vi på nettsiden og la til alle sidene som skal være med. Vi gikk også gjennom koden vi skal jobbe med i prosjektet, for å bli bedre kjent med den."
+    },
+    {
+      id: 4,
+      title: "Levering av nettside og applikasjon",
+      date: "29-08-2025",
+      excerpt: "Ferdigstilte nettside.",
+      tags: ["research", "analyse"],
+      content: "I dag finpusset vi på nettsiden og la til det om manglet."
     },
   ]
 
@@ -37,7 +45,14 @@ const Status = () => {
   const filteredPosts = (selectedTag === 'alle'
     ? statusPosts
     : statusPosts.filter(post => post.tags.includes(selectedTag))
-  ).sort((a, b) => new Date(b.date) - new Date(a.date))
+  ).sort((a, b) => {
+    // Parse dd-mm-yyyy format
+    const [dayA, monthA, yearA] = a.date.split('-').map(Number)
+    const [dayB, monthB, yearB] = b.date.split('-').map(Number)
+    const dateA = new Date(yearA, monthA - 1, dayA)
+    const dateB = new Date(yearB, monthB - 1, dayB)
+    return dateB - dateA // Sort oldest first
+  })
 
   return (
     <div>
