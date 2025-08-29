@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TeamMember = ({ member }) => (
-  <div className="bg-white dark:bg-neutral-800 rounded-lg shadow-xl overflow-hidden border border-light-300 dark:border-neutral-700">
+  <div className="modern-card rounded-lg shadow-xl overflow-hidden">
     <div className="p-8 text-center">
       <img src={member.image} alt={member.name} className="w-32 h-32 rounded-full mx-auto mb-6 object-cover" />
       <h3 className="text-2xl font-bold mb-4 text-light-900 dark:text-neutral-100">{member.name}</h3>
@@ -37,16 +37,18 @@ const Team = () => {
   ]
 
   return (
-    <div className="py-16">
+    <div>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-center mb-12 bg-gradient-capgemini-bright bg-clip-text text-transparent">
-          Teamet vårt
-        </h1>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {teamMembers.map(member => (
-            <TeamMember key={member.name} member={member} />
-          ))}
+        <div className="modern-card p-12 rounded-2xl">
+          <h1 className="text-4xl font-bold text-center mb-12 bg-gradient-capgemini-bright bg-clip-text text-transparent">
+            Teamet vårt
+          </h1>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {teamMembers.map(member => (
+              <TeamMember key={member.name} member={member} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
