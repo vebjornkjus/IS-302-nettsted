@@ -1,5 +1,3 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import TitleJokester from './components/TitleJokester.jsx'
@@ -10,21 +8,45 @@ import Team from './pages/Team.jsx'
 
 function App() {
   return (
-    <Router>
+    <div className="min-h-screen relative">
       <TitleJokester />
-      <div className="min-h-screen bg-light-50 dark:bg-neutral-900 text-light-900 dark:text-neutral-100 flex flex-col">
-        <Header />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/hva-vi-gjor" element={<HvaViGjor />} />
-            <Route path="/status" element={<Status />} />
-            <Route path="/team" element={<Team />} />
-          </Routes>
-        </main>
-        <Footer />
+      
+      {/* Modern Background with glass support */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-slate-100 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,102,204,0.08)_0%,transparent_60%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(0,102,204,0.1)_0%,transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,136,255,0.06)_0%,transparent_60%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(0,136,255,0.1)_0%,transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_0%,transparent_80%)]"></div>
       </div>
-    </Router>
+      
+      {/* Fixed Header */}
+      <Header />
+      
+      {/* Scrollable Content */}
+      <main className="relative z-10">
+        {/* Home Section */}
+        <section id="home" className="min-h-screen">
+          <Home />
+        </section>
+        
+        {/* Hva Vi Gjør Section */}
+        <section id="hva-vi-gjor" className="modern-section">
+          <HvaViGjor />
+        </section>
+        
+        {/* Status Section */}
+        <section id="status" className="modern-section">
+          <Status />
+        </section>
+        
+        {/* Team Section */}
+        <section id="team" className="modern-section">
+          <Team />
+        </section>
+      </main>
+      
+      <Footer />
+    </div>
   )
 }
 
