@@ -12,7 +12,7 @@ const HvaViGjor = () => (
           <div className="modern-card rounded-xl p-8">
             <p className="text-lg enhanced-text text-light-800 dark:text-neutral-300 leading-relaxed">
               Vi videreutvikler en intern applikasjon som motiverer ansatte til å 
-              velge trappene fremfor heisen. Løsningen er bygget i C# med MVC-arkitektur. 
+              velge trappene fremfor heisen. Løsningen er bygget med ASP.NET Core Blazor Server og MySQL-database. 
               I praksisperioden fokuserer vi på å rydde i mappestruktur og forbedre 
               kodekvalitet, samt å legge til gamification-elementer 
               (poeng, badges og vennlige konkurranser) som øker engasjementet. 
