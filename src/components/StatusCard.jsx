@@ -2,7 +2,7 @@ import React from 'react'
 
 const StatusCard = ({ post, isExpanded, onToggle }) => {
   return (
-    <div className="bg-white dark:bg-neutral-800 rounded-lg shadow-xl overflow-hidden border border-light-300 dark:border-neutral-700 self-start">
+    <div className="modern-card rounded-lg shadow-xl overflow-hidden self-start">
       <div className="p-6">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm text-light-800 dark:text-neutral-300">{post.date}</span>
