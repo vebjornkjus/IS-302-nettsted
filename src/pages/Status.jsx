@@ -18,7 +18,7 @@ const Status = () => {
       id: 2,
       title: "Introduksjonsdag",
       date: "27-08-2025",
-      excerpt: "Fått tilganger og opplæring i Azure devops.",
+      excerpt: "Fått tilganger og kjapp gjennomgang av Azure DevOps.",
       tags: ["planlegging", "møter"],
       content: "I dag fikk vi adgangskort, og tilganger til bedriftens systemer. Vi har også fått opplæring i Azure DevOps, som vi skal bruke til prosjektet."
     },
@@ -37,6 +37,22 @@ const Status = () => {
       excerpt: "Ferdigstilte nettside.",
       tags: ["research", "analyse"],
       content: "I dag finpusset vi på nettsiden og la til det om manglet."
+    },
+    {
+      id: 5,
+      title: "Klona repository og litt gjennomgang",
+      date: "02-09-2025",
+      excerpt: "Klona repo",
+      tags: ["research","analyse"],
+      content: "Fikk klonet repoet ned på egne PC-er, sliter litt med å få starta prosjektet."
+    },
+        {
+      id: 6,
+      title: "Klona repository og litt gjennomgang",
+      date: "05-09-2025",
+      excerpt: "Startet sprint-planlegging",
+      tags: ["planlegging","analyse"],
+      content: "Fått grundig gjennomgang av Azure DevOps og de viktigste funksjonene der. Prosjektet kjører lokalt på PC-ene våres også nå."
     },
   ]
 
