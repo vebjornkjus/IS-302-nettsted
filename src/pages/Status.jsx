@@ -48,7 +48,7 @@ const Status = () => {
     },
         {
       id: 6,
-      title: "Klona repository og litt gjennomgang",
+      title: "Gjennomgang av Azure DevOp",
       date: "05-09-2025",
       excerpt: "Startet sprint-planlegging",
       tags: ["planlegging","analyse"],
