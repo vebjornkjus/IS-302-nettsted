@@ -123,6 +123,21 @@
     font-weight: 800;
   }
 
+  /* Simple line clamp without plugin */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
   /* Improved spacing system */
   .content-spacing {
     padding: 3rem;

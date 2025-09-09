@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import StatusCard from '../components/StatusCard'
 
 const Status = () => {
   const [selectedTag, setSelectedTag] = useState('alle')
   const [expandedCards, setExpandedCards] = useState(new Set())
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 6
 
   const statusPosts = [
     {
@@ -75,13 +77,22 @@ const Status = () => {
     const [dayB, monthB, yearB] = b.date.split('-').map(Number)
     const dateA = new Date(yearA, monthA - 1, dayA)
     const dateB = new Date(yearB, monthB - 1, dayB)
-    return dateB - dateA // Sort oldest first
+    return dateB - dateA // newest first
   })
+
+  // Reset to page 1 when filter changes
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [selectedTag])
+
+  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / itemsPerPage))
+  const startIndex = (currentPage - 1) * itemsPerPage
+  const currentPosts = filteredPosts.slice(startIndex, startIndex + itemsPerPage)
 
   return (
     <div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="modern-card p-12 rounded-2xl">
+        <div className="modern-card p-12 rounded-2xl min-h-[820px] flex flex-col">
           <h1 className="text-4xl font-bold text-center mb-12 bg-gradient-capgemini-bright bg-clip-text text-transparent">
             Daglige Oppdateringer
           </h1>
@@ -104,8 +115,8 @@ const Status = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
-            {filteredPosts.map(post => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch flex-1">
+            {currentPosts.map(post => (
               <StatusCard
                 key={post.id}
                 post={post}
@@ -119,6 +130,48 @@ const Status = () => {
               />
             ))}
           </div>
+
+          {filteredPosts.length > itemsPerPage && (
+            <div className="mt-auto pt-6 flex items-center justify-center gap-2">
+              <button
+                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                disabled={currentPage === 1}
+                className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all duration-200 interactive-element ${
+                  currentPage === 1
+                    ? 'opacity-50 cursor-not-allowed border-light-300 dark:border-neutral-700 text-light-700 dark:text-neutral-400'
+                    : 'bg-white dark:bg-neutral-900 border-light-300 dark:border-neutral-700 hover:border-capgemini-500/50 text-light-900 dark:text-neutral-100'
+                }`}
+              >
+                Forrige
+              </button>
+
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`w-10 h-10 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 interactive-element ${
+                    currentPage === page
+                      ? 'bg-gradient-capgemini-bright text-black shadow-lg'
+                      : 'bg-white dark:bg-neutral-900 text-light-900 dark:text-neutral-100 border border-light-300 dark:border-neutral-700 hover:border-capgemini-500/50'
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+
+              <button
+                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                disabled={currentPage === totalPages}
+                className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all duration-200 interactive-element ${
+                  currentPage === totalPages
+                    ? 'opacity-50 cursor-not-allowed border-light-300 dark:border-neutral-700 text-light-700 dark:text-neutral-400'
+                    : 'bg-white dark:bg-neutral-900 border-light-300 dark:border-neutral-700 hover:border-capgemini-500/50 text-light-900 dark:text-neutral-100'
+                }`}
+              >
+                Neste
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
