@@ -1,12 +1,49 @@
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import TitleJokester from './components/TitleJokester.jsx'
 import Home from './pages/Home.jsx'
 import HvaViGjor from './pages/HvaViGjor.jsx'
 import Status from './pages/Status.jsx'
+import Statusrapporter from './pages/Statusrapporter.jsx'
+import Status1 from './pages/Status1.jsx'
 import Team from './pages/Team.jsx'
 
+function MainPage() {
+  return (
+    <>
+      {/* Home Section */}
+      <section id="home" className="min-h-screen">
+        <Home />
+      </section>
+      
+      {/* Hva Vi Gjør Section */}
+      <section id="hva-vi-gjor" className="modern-section">
+        <HvaViGjor />
+      </section>
+      
+      {/* Daglige Oppdateringer Section */}
+      <section id="daglige-oppdateringer" className="modern-section">
+        <Status />
+      </section>
+      
+      {/* Statusrapporter Section */}
+      <section id="statusrapporter" className="modern-section">
+        <Statusrapporter />
+      </section>
+      
+      {/* Team Section */}
+      <section id="team" className="modern-section">
+        <Team />
+      </section>
+    </>
+  )
+}
+
 function App() {
+  const location = useLocation()
+  const isStatusPage = location.pathname.startsWith('/status')
+
   return (
     <div className="min-h-screen relative">
       <TitleJokester />
@@ -19,30 +56,15 @@ function App() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_0%,transparent_80%)]"></div>
       </div>
       
-      {/* Fixed Header */}
-      <Header />
+      {/* Header - only show on main page, not on status pages */}
+      {!isStatusPage && <Header />}
       
       {/* Scrollable Content */}
       <main className="relative z-10">
-        {/* Home Section */}
-        <section id="home" className="min-h-screen">
-          <Home />
-        </section>
-        
-        {/* Hva Vi Gjør Section */}
-        <section id="hva-vi-gjor" className="modern-section">
-          <HvaViGjor />
-        </section>
-        
-        {/* Status Section */}
-        <section id="status" className="modern-section">
-          <Status />
-        </section>
-        
-        {/* Team Section */}
-        <section id="team" className="modern-section">
-          <Team />
-        </section>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/status1" element={<Status1 />} />
+        </Routes>
       </main>
       
       <Footer />
