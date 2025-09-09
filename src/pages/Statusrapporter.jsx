@@ -1,4 +1,8 @@
+import { useNavigate } from 'react-router-dom'
+
 const Statusrapporter = () => {
+  const navigate = useNavigate()
+  
   const statusReports = [
     {
       id: 1,
@@ -21,7 +25,7 @@ const Statusrapporter = () => {
   ]
 
   const goToStatus1 = () => {
-    window.location.href = '/status1'
+    navigate('/status1')
   }
 
   return (
