@@ -30,7 +30,7 @@ const Team = () => {
     {
       name: "Kristian Kalleberg", 
       bio: "Erfaring innenfor IT- og informasjonssystemer. Har interesse for systemutvikling og digitalisering.",
-      image: "https://via.placeholder.com/200x200/a855f7/ffffff?text=K",
+      image: "/images/KristianBilde.jpg",
       linkedin: "https://www.linkedin.com/feed/",
       github: "https://github.com/Kristiank02"
     }
