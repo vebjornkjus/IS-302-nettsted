@@ -46,13 +46,21 @@ const Status = () => {
       tags: ["research","analyse"],
       content: "Fikk klonet repoet ned på egne PC-er, sliter litt med å få starta prosjektet."
     },
-        {
+    {
       id: 6,
       title: "Gjennomgang av Azure DevOp",
       date: "05-09-2025",
       excerpt: "Startet sprint-planlegging",
       tags: ["planlegging","analyse"],
       content: "Fått grundig gjennomgang av Azure DevOps og de viktigste funksjonene der. Prosjektet kjører lokalt på PC-ene våres også nå."
+    },
+    {
+      id: 7,
+      title: "Jobbet med CapTrapp applikasjonen",
+      date: "09-09-2025",
+      excerpt: "Begynt på Monitorsiden",
+      tags: ["prototype","design"],
+      content: "Fått laget en monitorside, som skal vise statistikk og fremgang for de ansatte på en skjerm"
     },
   ]
 
