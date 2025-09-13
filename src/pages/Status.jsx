@@ -64,6 +64,14 @@ const Status = () => {
       tags: ["prototype","design"],
       content: "Fått laget en monitorside, som skal vise statistikk og fremgang for de ansatte på en skjerm"
     },
+    {
+      id: 8,
+      title: "Formatering og Mikrokontroller",
+      date: "12-09-2025",
+      excerpt: "Satt opp en PC med Windows på minnepenn og tester mikrokontrollere",
+      tags: ["prototype","research"],
+      content: "Fått en kompakt PC for å sette opp prosjektet vårt på denne til testing. Har også fått mikrokontrollere som må konfigureres til prosjektet vårt."
+    },
   ]
 
   const tags = ['alle', 'planlegging', 'UX', 'design', 'møter', 'research', 'prototype', 'analyse']

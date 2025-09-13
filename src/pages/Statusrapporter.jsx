@@ -8,7 +8,7 @@ const Statusrapporter = () => {
       date: "12-09-2025",
       excerpt: "Oppsummering av første måned hos Capgemini med fokus på bedriften, arbeidsoppgaver og læringspunkter.",
       image: "/images/ByggBredt.jpg",
-      link: "src/pages/Status1.jsx",
+      link: "/status1",
       completed: true
     },
     {
@@ -22,8 +22,6 @@ const Statusrapporter = () => {
     }
   ]
 
-  // Navigasjon håndteres av React Router via <Link>
-
   return (
     <div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,7 +29,7 @@ const Statusrapporter = () => {
           <h1 className="text-4xl font-bold text-center mb-12 bg-gradient-capgemini-bright bg-clip-text text-transparent">
             Statusrapporter
           </h1>
-          
+
           <p className="text-center text-slate-600 dark:text-neutral-400 mb-12 text-lg">
             Formelle rapporter og refleksjoner fra praksisperioden
           </p>
@@ -83,9 +81,9 @@ const Statusrapporter = () => {
                     <span className="text-sm text-capgemini-600 dark:text-capgemini-400 font-medium">
                       {report.date}
                     </span>
-                    {report.completed && (
+                    {report.completed ? (
                       <Link
-                        to="/status1"
+                        to={report.link}
                         className="inline-flex items-center px-4 py-2 bg-gradient-capgemini-bright text-black rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-sm font-medium"
                       >
                         Les rapport
@@ -93,8 +91,7 @@ const Statusrapporter = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </Link>
-                    )}
-                    {!report.completed && (
+                    ) : (
                       <div className="text-slate-400 dark:text-neutral-500 text-sm italic">
                         Kommer snart
                       </div>
