@@ -5,7 +5,7 @@ const Status = () => {
   const [selectedTag, setSelectedTag] = useState('alle')
   const [expandedCards, setExpandedCards] = useState(new Set())
   const [currentPage, setCurrentPage] = useState(1)
-  const itemsPerPage = 6
+  const itemsPerPage = 3
 
   const statusPosts = [
     {
@@ -72,6 +72,38 @@ const Status = () => {
       tags: ["prototype","research"],
       content: "Fått en kompakt PC for å sette opp prosjektet vårt på denne til testing. Har også fått mikrokontrollere som må konfigureres til prosjektet vårt."
     },
+    {
+      id: 9,
+      title: "Satt opp PC",
+      date: "16-09-2025",
+      excerpt: "Fått satt opp PC-en med Windows og nødvendige programmer",
+      tags: ["planlegging"],
+      content: "Fikk ny minnepenn med windows installert, og fikk satt opp PC-en klart til å kjøre prosjektet"
+    },
+    {
+      id: 10,
+      title: "Fikset mikrokontroller og lastet opp kode",
+      date: "17-09-2025",
+      excerpt: "Fikk endelig fikset mikrokontrollerne og lastet opp kode til dem.",
+      tags: ["research", "prototype"],
+      content: "Fant ut at vi trengte noen drivere på mac for å få dette til å fungere. Videre skal vi jobbe med å få til RFID scanneren"
+    },
+    {
+      id: 11,
+      title: "Veiledning av Svein",
+      date: "23-09-2025",
+      excerpt: "Fikk veiledning til oppsett av mikrokontrollere.",
+      tags: ["planlegging", "møter"],
+      content: "Fikk filer vi trengte for prosjektet. Fikk disse over på mac og fikk kjørt koden."
+    },
+    {
+      id: 12,
+      title: "Jobbet med oppsett av mikrokontrollere mot applikasjonen",
+      date: "24-09-2025",
+      excerpt: "Jobbet med oppsettet og integrere mikrokontrollerne mot applikasjonen og databasen.",
+      tags: ["research", "prototype"],
+      content: "Fant ut at vi trengte noen drivere på mac for å få dette til å fungere. Videre skal vi jobbe med å få til RFID scanneren"
+    }
   ]
 
   const tags = ['alle', 'planlegging', 'UX', 'design', 'møter', 'research', 'prototype', 'analyse']
@@ -96,6 +128,8 @@ const Status = () => {
   const totalPages = Math.max(1, Math.ceil(filteredPosts.length / itemsPerPage))
   const startIndex = (currentPage - 1) * itemsPerPage
   const currentPosts = filteredPosts.slice(startIndex, startIndex + itemsPerPage)
+  const rangeStart = filteredPosts.length === 0 ? 0 : startIndex + 1
+  const rangeEnd = Math.min(startIndex + itemsPerPage, filteredPosts.length)
 
   return (
     <div>
@@ -139,45 +173,53 @@ const Status = () => {
             ))}
           </div>
 
-          {filteredPosts.length > itemsPerPage && (
-            <div className="mt-auto pt-6 flex items-center justify-center gap-2">
-              <button
-                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
-                disabled={currentPage === 1}
-                className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all duration-200 interactive-element ${
-                  currentPage === 1
-                    ? 'opacity-50 cursor-not-allowed border-light-300 dark:border-neutral-700 text-light-700 dark:text-neutral-400'
-                    : 'bg-white dark:bg-neutral-900 border-light-300 dark:border-neutral-700 hover:border-capgemini-500/50 text-light-900 dark:text-neutral-100'
-                }`}
-              >
-                Forrige
-              </button>
+          {filteredPosts.length > 0 && (
+            <div className="mt-auto pt-6 flex flex-col items-center gap-3">
+              <div className="text-sm text-slate-500 dark:text-neutral-400">
+                Viser {rangeStart}-{rangeEnd} av {filteredPosts.length} oppdateringer
+              </div>
 
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                <button
-                  key={page}
-                  onClick={() => setCurrentPage(page)}
-                  className={`w-10 h-10 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 interactive-element ${
-                    currentPage === page
-                      ? 'bg-gradient-capgemini-bright text-black shadow-lg'
-                      : 'bg-white dark:bg-neutral-900 text-light-900 dark:text-neutral-100 border border-light-300 dark:border-neutral-700 hover:border-capgemini-500/50'
-                  }`}
-                >
-                  {page}
-                </button>
-              ))}
+              {filteredPosts.length > itemsPerPage && (
+                <div className="flex items-center justify-center gap-2">
+                  <button
+                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                    disabled={currentPage === 1}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all duration-200 interactive-element ${
+                      currentPage === 1
+                        ? 'opacity-50 cursor-not-allowed border-light-300 dark:border-neutral-700 text-light-700 dark:text-neutral-400'
+                        : 'bg-white dark:bg-neutral-900 border-light-300 dark:border-neutral-700 hover:border-capgemini-500/50 text-light-900 dark:text-neutral-100'
+                    }`}
+                  >
+                    Nyere
+                  </button>
 
-              <button
-                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-                disabled={currentPage === totalPages}
-                className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all duration-200 interactive-element ${
-                  currentPage === totalPages
-                    ? 'opacity-50 cursor-not-allowed border-light-300 dark:border-neutral-700 text-light-700 dark:text-neutral-400'
-                    : 'bg-white dark:bg-neutral-900 border-light-300 dark:border-neutral-700 hover:border-capgemini-500/50 text-light-900 dark:text-neutral-100'
-                }`}
-              >
-                Neste
-              </button>
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                    <button
+                      key={page}
+                      onClick={() => setCurrentPage(page)}
+                      className={`w-10 h-10 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 interactive-element ${
+                        currentPage === page
+                          ? 'bg-gradient-capgemini-bright text-black shadow-lg'
+                          : 'bg-white dark:bg-neutral-900 text-light-900 dark:text-neutral-100 border border-light-300 dark:border-neutral-700 hover:border-capgemini-500/50'
+                      }`}
+                    >
+                      {page}
+                    </button>
+                  ))}
+
+                  <button
+                    onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                    disabled={currentPage === totalPages}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all duration-200 interactive-element ${
+                      currentPage === totalPages
+                        ? 'opacity-50 cursor-not-allowed border-light-300 dark:border-neutral-700 text-light-700 dark:text-neutral-400'
+                        : 'bg-white dark:bg-neutral-900 border-light-300 dark:border-neutral-700 hover:border-capgemini-500/50 text-light-900 dark:text-neutral-100'
+                    }`}
+                  >
+                    Eldre
+                  </button>
+                </div>
+              )}
             </div>
           )}
         </div>
