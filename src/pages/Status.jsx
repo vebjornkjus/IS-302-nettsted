@@ -103,10 +103,18 @@ const Status = () => {
       excerpt: "Jobbet med oppsettet og integrere mikrokontrollerne mot applikasjonen og databasen.",
       tags: ["research", "prototype"],
       content: "Fant ut at vi trengte noen drivere på mac for å få dette til å fungere. Videre skal vi jobbe med å få til RFID scanneren"
-    }
+    },
+    {
+      id: 13,
+      title: "Fikset kortscanner",
+      date: "08-10-2025",
+      excerpt: "Vi får nå scannet kortet og lagret det i databasen.",
+      tags: ["design", "prototype"],
+      content: "Kortet scannes nå og lagres. Vi bruker Cloudfare for å sende dataene, så mikrokontrolleren og pcen kan være på froskjellige nett og snakke sammen."
+    },
   ]
 
-  const tags = ['alle', 'planlegging', 'UX', 'design', 'møter', 'research', 'prototype', 'analyse']
+  const tags = ['alle', 'daglig', 'planlegging', 'UX', 'design', 'møter', 'research', 'prototype', 'analyse']
 
   const filteredPosts = (selectedTag === 'alle'
     ? statusPosts
