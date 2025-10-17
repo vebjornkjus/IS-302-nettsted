@@ -13,12 +13,12 @@ const Statusrapporter = () => {
     },
     {
       id: 2,
-      title: "Status 2 - Kommer snart",
-      date: "Oktober 2025",
-      excerpt: "Neste statusrapport kommer om ca. en måned med oppdateringer om prosjektets fremgang.",
-      image: "/api/placeholder/400/250",
-      link: "#status2",
-      completed: false
+      title: "Status 2 - Andre måned i praksis",
+      date: "16-09-2025",
+      excerpt: "Oppsummering av måned nr. 2 hos Capgemini.",
+      image: "/images/ByggBredt.jpg",
+      link: "/status2",
+      completed: true
     }
   ]
 
@@ -111,8 +111,8 @@ const Statusrapporter = () => {
               </div>
               <div className="w-px h-4 bg-slate-300 dark:bg-neutral-600"></div>
               <div className="flex items-center">
-                <div className="w-3 h-3 bg-yellow-400 rounded-full mr-2"></div>
-                <span className="text-sm text-slate-600 dark:text-neutral-400">Status 2 planlagt</span>
+                <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+                <span className="text-sm text-slate-600 dark:text-neutral-400">Status 2 ferdig</span>
               </div>
             </div>
           </div>
