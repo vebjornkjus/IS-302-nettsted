@@ -7,6 +7,7 @@ import HvaViGjor from './pages/HvaViGjor.jsx'
 import Status from './pages/Status.jsx'
 import Statusrapporter from './pages/Statusrapporter.jsx'
 import Status1 from './pages/Status1.jsx'
+import Status2 from './pages/Status2.jsx'
 import Team from './pages/Team.jsx'
 
 function MainPage() {
@@ -64,6 +65,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/status1" element={<Status1 />} />
+          <Route path="/status2" element={<Status2 />} />
         </Routes>
       </main>
       
