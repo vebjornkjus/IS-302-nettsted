@@ -102,8 +102,7 @@ const Status2 = () => {
               <div className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
                 {formatContent(`
 **Organisasjon og samarbeid:**
-• Tverrfaglige team: Denne måneden har det vært bedre plass oppe i 8. etasje så vi har fått jobbet mer sammen med resten av de ansatte.
-• Fredagskos: s
+• Jobbet videre med CapTrapp og fått en fungerende løsning som er klar for testing.
 
 **Nye relasjoner denne måneden:**
 • Drift & sikkerhet: Vi har hatt konkrete avklaringer om hvordan en skanner på ett nett kan registrere data i en database på et annet.
@@ -112,17 +111,13 @@ const Status2 = () => {
                 `)}
               </div>
 
-              {/* Image placeholder */}
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-xl p-8 border-2 border-dashed border-gray-300 dark:border-gray-600 flex flex-col justify-center items-center min-h-[300px]">
-                <svg className="w-16 h-16 text-gray-400 dark:text-gray-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <h4 className="font-bold text-gray-700 dark:text-gray-300 mb-2 text-center text-xl">
-                  Bilde fra arbeidsplassen
-                </h4>
-                <p className="text-gray-500 dark:text-gray-400 text-center">
-                  Legg til bilde av kontoret eller teamet
-                </p>
+              {/* CapTrapp workplace image */}
+              <div className="flex justify-center items-center">
+                <img
+                  src="/images/CapTrappLogo.png"
+                  alt="CapTrapp logo"
+                  className="w-64 h-64 object-contain drop-shadow-lg"
+                />
               </div>
             </div>
           </section>
@@ -159,16 +154,16 @@ I andre måned har vi fortsatt å jobbe med CapTrapp-prosjektet.
                   controls 
                   className="w-full h-[250px] object-cover rounded-t-xl"
                 >
-                  <source src="/videos/UserPage.mov" type="video/quicktime" />
-                  <source src="/videos/UserPage.mov" type="video/mp4" />
+                  <source src="/videos/IMG_2339.mov" type="video/quicktime" />
+                  <source src="/videos/IMG_2339.mov" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <div className="p-4 bg-white dark:bg-neutral-800">
                   <h4 className="font-bold text-gray-700 dark:text-gray-300 mb-1 text-center text-lg">
-                    CapTrapp - Brukerside
+                    CapTrapp - Monitorsiden
                   </h4>
                   <p className="text-gray-500 dark:text-gray-400 text-center text-sm">
-                    Demonstrasjon av appens eksisterende funksjonalitet
+                    Demonstrasjon av kortscanning og live oppdatering
                   </p>
                 </div>
               </div>
@@ -176,8 +171,8 @@ I andre måned har vi fortsatt å jobbe med CapTrapp-prosjektet.
               {/* Image */}
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <img 
-                  src="/images/KristianJobber.JPG" 
-                  alt="Kristian på jobb hos Capgemini"
+                  src="/images/VebjornJobber.JPG" 
+                  alt="Vebjørn på jobb hos Capgemini"
                   className="w-full h-[250px] object-cover"
                 />
                 <div className="p-4 bg-white dark:bg-neutral-800">
@@ -185,7 +180,7 @@ I andre måned har vi fortsatt å jobbe med CapTrapp-prosjektet.
                     Praksisgruppen på jobb
                   </h4>
                   <p className="text-gray-500 dark:text-gray-400 text-center text-sm">
-                    Kristian i aksjon på arbeidsplassen
+                    Vebjørn i aksjon på arbeidsplassen
                   </p>
                 </div>
               </div>
@@ -206,10 +201,6 @@ I andre måned har vi fortsatt å jobbe med CapTrapp-prosjektet.
 • Pålitelighet i kant-enheter: Buffering, retry-strategier og idempotens gjør at skannerne oppfører seg forutsigbart.
 • Observability: Strukturerte logger og enkle målepunkt (latency, feilrate, duplikater) gjør feilsøking rask.
 
-**Produktinnsikt:**
-• Mål som betyr noe: Lagtabell per bygg og tydelig historikk veier mer enn "flest totale trappetrinn".
-• Moderering og tillit: Et synlig revisjonsspor senker terskelen for å bruke scoreboardet i interne konkurranser.
-
 **Samarbeid:**
 • Kortere vei til de rette folka gir raskere avklaringer. Det å kjenne navn, roller og ansvar har spart oss for både e-poster og venting.
               `)}
@@ -227,31 +218,27 @@ I andre måned har vi fortsatt å jobbe med CapTrapp-prosjektet.
               <div className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
                 {formatContent(`
 **Mål for neste måned:**
-• Pilot i flere soner: Rulle ut skannere i flere etasjer/bygg og måle faktisk bruk.
-• UX-forbedringer: Finne terskelen for "raskt nok" på live-oppdateringer og sikre at mobilvisning sitter.
-• Driftbarhet: Bedre alarmering på feilede kall, samt en enkel helseside for skannere.
-
-**Teknisk fokus:**
-• Sikkerhet i praksis: Jevnlig rotasjon av nøkler/tokens og tettere rate-begrensning.
-• Enhetskvalitet: Hardcase, kabling og festeløsninger som tåler daglig bruk.
+• Innstallere pc og scanner i begge etasjer, for å gjøre klart til testing med ekte brukere.
+• Få innsikt fra Capgemini-ansatte gjennom brukertesting og tilbakemeldinger.
+• Implementere applikasjonen i Azure.
+• Jobbe med design på ESP32 skanneren for å gjøre den mer brukervennlig og estetisk.
 
 **Suksesskriterier:**
-• Stabil registrering på tvers av nettverk med lav latency.
+• Stabil og rask registrering på tvers av nettverk.
 • Scoreboard som oppleves rettferdig, forklarbart og motiverende.
-• Tydelige metrikker for bruk per bygg/lag som kan deles internt.
                 `)}
               </div>
 
-              {/* AdminPage image */}
+              {/* ESP32 display image */}
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <img
-                  src="/images/AdminPage.png"
-                  alt="CapTrapp Admin-side som vi har jobbet med"
+                  src="/images/ESP32CapgeminiLogo.jpg"
+                  alt="ESP32 display med Capgemini-logo"
                   className="w-full h-auto object-contain bg-gray-50 dark:bg-gray-800"
                 />
                 <div className="p-4 bg-white dark:bg-neutral-800">
                   <h4 className="font-bold text-gray-700 dark:text-gray-300 mb-1 text-center text-lg">
-                    CapTrapp - Admin-side
+                    ESP32 Display
                   </h4>
                   <p className="text-gray-500 dark:text-gray-400 text-center text-sm">
                     Arbeid fra måned 2
@@ -262,36 +249,6 @@ I andre måned har vi fortsatt å jobbe med CapTrapp-prosjektet.
           </section>
         </div>
 
-        {/* Fun coffee video section */}
-        <div className="mt-8 bg-white dark:bg-neutral-900 rounded-2xl shadow-xl overflow-hidden">
-          <section className="p-8 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center justify-center">
-              <span className="mr-3">☕</span>
-              Bonus: Kaffepause
-              <span className="ml-3"></span>
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 italic">
-              Fordi kaffe er viktig i praksisperioden også...
-            </p>
-            
-            {/* Coffee montage video */}
-            <div className="max-w-2xl mx-auto">
-              <video 
-                controls 
-                className="w-full rounded-xl shadow-lg"
-                poster="/images/coffee-poster.jpg"
-              >
-                <source src="/videos/KaffeMontageEdit.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className="mt-4 text-center">
-                <p className="text-gray-600 dark:text-gray-400 text-sm italic">
-                  En liten kaffepause i den ellers så seriøse statusrapporten ☕
-                </p>
-              </div>
-            </div>
-          </section>
-        </div>
       </div>
     </div>
   )

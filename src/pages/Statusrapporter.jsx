@@ -14,8 +14,8 @@ const Statusrapporter = () => {
     {
       id: 2,
       title: "Status 2 - Andre måned i praksis",
-      date: "16-09-2025",
-      excerpt: "Oppsummering av måned nr. 2 hos Capgemini.",
+      date: "20-10-2025",
+      excerpt: "Oppsummering av måned nr. 2 hos Capgemini. Fokus på videre utvikling, utfordringer og erfaringer.",
       image: "/images/ByggBredt.jpg",
       link: "/status2",
       completed: true
