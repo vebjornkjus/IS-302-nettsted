@@ -102,7 +102,7 @@ const Status = () => {
       date: "24-09-2025",
       excerpt: "Jobbet med oppsettet og integrere mikrokontrollerne mot applikasjonen og databasen.",
       tags: ["research", "prototype"],
-      content: "Fant ut at vi trengte noen drivere på mac for å få dette til å fungere. Videre skal vi jobbe med å få til RFID scanneren"
+      content: "Kodet logikk som gjorde at mikrokontrolleren kan kommunisere med applikasjonens backend."
     },
     {
       id: 13,
@@ -112,9 +112,57 @@ const Status = () => {
       tags: ["design", "prototype"],
       content: "Kortet scannes nå og lagres. Vi bruker Cloudfare for å sende dataene, så mikrokontrolleren og pcen kan være på froskjellige nett og snakke sammen."
     },
+    {
+      id: 14,
+      title: "Design på mikrokontroller",
+      date: "16-10-2025",
+      excerpt: "Lært hvordan man legger til bilder på en mikrokontroller.",
+      tags: ["esp32", "design"],
+      content: "Møtte på mye utfordringer rundt bildet som skulle vises på mikrokontrolleren fordi den ikke kan vise vanlige bildefiler. Brukte derfor AI til å gjøre om bilde til en c-array hvor hver piksel får en fargeverdig i RGB-format."
+    },
+    {
+      id: 15,
+      title: "Flere endringer på monitor-siden",
+      date: "17-10-2025",
+      excerpt: "Monitor-siden har fått nye funksjoner og design-elementer.",
+      tags: ["UX", "design"],
+      content: "Monitor-siden viser nå pågående økter i trappene og hvor lang tid hver person bruker, raskeste tider vises også på forsiden. Og de personene med flest trapper i løpet av måneden vises på et scoreboard."
+    },
+    {
+      id: 16,
+      title: "Ny mikrokontroller!",
+      date: "21-10-2025",
+      excerpt: "Vi fikk enda en mikrokontroller sånn at vi kan teste med én i første og én i åttende etasje.",
+      tags: ["esp32", "backend"],
+      content: "Nå som vi har to mikrokontrollere må vi skrive om litt av koden på mikrokontrollerene og i backenden vår for at hver kontroller skal utføre forskjellige handlinger utifra hvilken etasje de skal være plassert i."
+    },
+    {
+      id: 17,
+      title: "Ryddedag",
+      date: "22-10-2025",
+      excerpt: "Ryddet og slettet i prosjektfiler fra tildigere utvikling.",
+      tags: ["planlegging", "rydding"],
+      content: "Satte av store deler av dagen til å rydde opp i gamle prosjektfiler som ikke brukes lenger eller er helt tomme. Dette resulterte i nesten 20 slettede filer og like mange endringer."
+    },
+    {
+      id: 18,
+      title: "Migrering og MySQL",
+      date: "29-10-2025",
+      excerpt: "Opprettet migrering for å oppdatere 'live' databasen.",
+      tags: ["backend", "hjelp"],
+      content: "Fikk hjelp av Marius til å finne ut hvordan vi skal jobbe fremover mot levering og hva som gjenstår for å levere et fungerende produkt. Vi fikk en enkel plan og opprettet en ny migrering og lastet ned MySQL Workbench."
+    },
+    {
+      id: 19,
+      title: "Intervju og medaljer",
+      date: "05-11-2025",
+      excerpt: "Intervjuet ansatte og skrevet om kode så medaljer vises på brukerprofiler.",
+      tags: ["møter", "backend"],
+      content: "Mange på kontoret var syke idag, resulterte i at vi ikke fikk gjort så mye som vi ville på prosjektet. Men fikk brukt tiden til å filme og intervjue ansatte til videoen som skal leveres 14. november."
+    },
   ]
 
-  const tags = ['alle', 'daglig', 'planlegging', 'UX', 'design', 'møter', 'research', 'prototype', 'analyse']
+  const tags = ['alle', 'daglig', 'planlegging', 'UX', 'design', 'møter', 'research', 'prototype', 'analyse', 'backend', 'esp32', 'sosialt', 'hjelp', 'rydding']
 
   const filteredPosts = (selectedTag === 'alle'
     ? statusPosts
