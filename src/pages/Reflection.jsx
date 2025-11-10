@@ -72,7 +72,7 @@ const Reflection = () => {
               Våre tanker og erfaringer fra tiden hos Capgemini
             </p>
             <div className="inline-block px-4 py-2 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-medium">
-              Høst 2024
+              Høst 2025
             </div>
           </div>
 
@@ -135,27 +135,18 @@ Jeg har nok en enda lavere terskel for å spørre om hjelp nå enn når praksisp
                 {/* Text Content */}
                 <div className="text-gray-700 dark:text-gray-300 leading-relaxed">
                   <div className="prose dark:prose-invert max-w-none">
-                    {formatContent(`**Skriv din refleksjon her**
-
-Dette er en mal for refleksjonen din. Du kan bruke følgende formateringsmuligheter:
-
-• Kulepunkter starter med •
-• Bruk ** rundt tekst for å gjøre den fet
-• "Sitater" omgis av anførselstegn
-
-**Eksempel på overskrift**
-
-Her kan du skrive om:
-• Hva du lærte
-• Utfordringer du møtte
-• Erfaringer du tar med deg videre
-• Hva du likte best med praksisperioden
+                    {formatContent(`**Erfaringer**
+Etter praksisperioden sitter jeg igjen med mange nyttige erfaringer som jeg vet jeg vil få bruk for videre. Jeg fikk jobbet med mye nytt, testet ulike løsninger og opplevde hvordan det er å jobbe i praksis mot et reelt prosjekt. Vi fikk god støtte fra de ansatte, som alltid stilte opp når vi lurte på noe, og de ga oss samtidig et innblikk i hvordan de jobber til daglig. Jeg ble også introdusert til Azure platformen, noe jeg tror blir verdifullt for meg fremover.
 
 **Teknisk læring**
-Beskriv tekniske ferdigheter du utviklet.
+Gjennom praksisprosjektet fikk jeg muligheten til å jobbe med mange forskjellige deler av systemet. Jeg jobbet blant annet med frontend-design til monitorsiden, og fikk utforske hvordan man bygger et tydelig og stabilt brukergrensesnitt. I tillegg fikk jeg teste mikrokontrollere (ESP32) og lære mer om hvordan de fungerer i samspill med resten av systemet
+
+En annen viktig erfaring var hvor avgjørende god kodestruktur og ryddighet er for at andre skal kunne ta over et prosjekt senere. Det var litt mye rot i filene, blant annet ubrukte filer og avhengigheter. Selv om det var mye nytt å sette seg inn i, og det til tider føltes litt overveldende, gjorde det også at jeg fikk en god helhetsforståelse av koden. Jeg måtte innom mange deler av prosjektet for å finne ut hvordan ting hang sammen, og det lærte jeg mye av.
 
 **Personlig utvikling**
-Reflekter over din personlig e vekst.`)}
+Personlig har jeg fått en bedre forståelse av samspillet mellom det fysiske (som mikrokontrollerne/kortscannere) og det tekniske systemet bak. Jeg har også lært viktigheten av å prioritere riktig og gå rett på sak når tiden er begrenset. Dette gjorde at jeg lærte mye på kort tid.
+
+Jeg tar med meg gode erfaringer både fra det tekniske arbeidet og fra samarbeidet med de ansatte. Praksisperioden har gitt meg verdifull innsikt, ny kunnskap og trygghet som jeg kommer til å få bruk for videre, både i studier og arbeidsliv.`)}
                   </div>
                 </div>
 
