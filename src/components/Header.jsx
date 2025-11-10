@@ -10,12 +10,13 @@ const Header = () => {
     { name: 'Hva vi gjør', href: '#hva-vi-gjor' },
     { name: 'Daglige Oppdateringer', href: '#daglige-oppdateringer' },
     { name: 'Statusrapporter', href: '#statusrapporter' },
+    { name: 'Refleksjon', href: '#refleksjon' },
     { name: 'Team', href: '#team' },
   ]
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'hva-vi-gjor', 'daglige-oppdateringer', 'statusrapporter', 'team']
+      const sections = ['home', 'hva-vi-gjor', 'daglige-oppdateringer', 'statusrapporter', 'refleksjon', 'team']
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
