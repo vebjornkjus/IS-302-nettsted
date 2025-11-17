@@ -192,7 +192,7 @@ const Status = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="modern-card p-12 rounded-2xl min-h-[820px] flex flex-col">
           <h1 className="text-4xl font-bold text-center mb-12 bg-gradient-capgemini-bright bg-clip-text text-transparent">
-            Daglige Oppdateringer
+            Prosjektdagbok
           </h1>
 
           <div className="mb-8">

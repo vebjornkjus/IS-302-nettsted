@@ -8,7 +8,7 @@ const Header = () => {
   const navigation = [
     { name: 'Hjem', href: '#home' },
     { name: 'Hva vi gjør', href: '#hva-vi-gjor' },
-    { name: 'Daglige Oppdateringer', href: '#daglige-oppdateringer' },
+    { name: 'Prosjektdagbok', href: '#daglige-oppdateringer' },
     { name: 'Statusrapporter', href: '#statusrapporter' },
     { name: 'Refleksjon', href: '#refleksjon' },
     { name: 'Team', href: '#team' },

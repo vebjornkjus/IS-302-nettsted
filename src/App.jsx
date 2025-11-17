@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Routes, Route, useLocation, Link } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
@@ -10,6 +11,16 @@ import Status1 from './pages/Status1.jsx'
 import Status2 from './pages/Status2.jsx'
 import Reflection from './pages/Reflection.jsx'
 import Team from './pages/Team.jsx'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
 
 function MainPage() {
   return (
@@ -24,7 +35,7 @@ function MainPage() {
         <HvaViGjor />
       </section>
       
-      {/* Daglige Oppdateringer Section */}
+      {/* Prosjektdagbok Section */}
       <section id="daglige-oppdateringer" className="modern-section">
         <Status />
       </section>
@@ -75,6 +86,7 @@ function App() {
 
   return (
     <div className="min-h-screen relative">
+      <ScrollToTop />
       <TitleJokester />
       
       {/* Modern Background with glass support */}
